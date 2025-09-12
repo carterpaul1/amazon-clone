@@ -34,7 +34,7 @@ i18n.use(initReactI18next).init({
           smartHome: "Smart Home",
           music: "Music",
           sportsOutdoors: "Sports & Outdoors",
-          pharmacy: "Pharmacy"
+          pharmacy: "Pharmacy",
         },
         footer: {
           backToTop: "Back to top",
@@ -104,9 +104,9 @@ i18n.use(initReactI18next).init({
           kdpDesc: "Self-publish",
           primeVideo: "Prime Video",
           primeVideoDesc: "Streaming",
-          builtWith: "Built with React + TailwindCSS"
-        }
-      }
+          builtWith: "Built with React + TailwindCSS",
+        },
+      },
     },
     es: {
       translation: {
@@ -139,7 +139,7 @@ i18n.use(initReactI18next).init({
           smartHome: "Hogar inteligente",
           music: "Música",
           sportsOutdoors: "Deportes y aire libre",
-          pharmacy: "Farmacia"
+          pharmacy: "Farmacia",
         },
         footer: {
           backToTop: "Volver arriba",
@@ -209,16 +209,16 @@ i18n.use(initReactI18next).init({
           kdpDesc: "Auto-publicación",
           primeVideo: "Prime Video",
           primeVideoDesc: "Streaming",
-          builtWith: "Construido con React + TailwindCSS"
-        }
-      }
-    }
+          builtWith: "Construido con React + TailwindCSS",
+        },
+      },
+    },
   },
   lng: "en",
   fallbackLng: "en",
   interpolation: {
-    escapeValue: false
-  }
+    escapeValue: false,
+  },
 });
 
 export default i18n;

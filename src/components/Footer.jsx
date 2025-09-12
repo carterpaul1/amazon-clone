@@ -82,7 +82,11 @@ export default function Footer() {
       <div className="flex flex-col items-center py-8 space-y-4">
         {/* Logo + language */}
         <div className="flex items-center space-x-6">
-          <img src={amazonLogo} alt="Amazon Logo" className="w-24 object-contain" />
+          <img
+            src={amazonLogo}
+            alt="Amazon Logo"
+            className="w-24 object-contain"
+          />
           <div className="flex items-center space-x-2">
             {/* Language Dropdown */}
             <select
@@ -104,18 +108,66 @@ export default function Footer() {
 
         {/* Extra Links */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 px-10 text-xs text-gray-400 max-w-6xl mx-auto text-center">
-          <p>{t("footer.music")}<br />{t("footer.musicDesc")}</p>
-          <p>{t("footer.ads")}<br />{t("footer.adsDesc")}</p>
-          <p>{t("footer.business")}<br />{t("footer.businessDesc")}</p>
-          <p>{t("footer.fresh")}<br />{t("footer.freshDesc")}</p>
-          <p>{t("footer.global")}<br />{t("footer.globalDesc")}</p>
-          <p>{t("footer.aws")}<br />{t("footer.awsDesc")}</p>
-          <p>{t("footer.audible")}<br />{t("footer.audibleDesc")}</p>
-          <p>{t("footer.boxOffice")}<br />{t("footer.boxOfficeDesc")}</p>
-          <p>{t("footer.goodreads")}<br />{t("footer.goodreadsDesc")}</p>
-          <p>{t("footer.imdb")}<br />{t("footer.imdbDesc")}</p>
-          <p>{t("footer.kdp")}<br />{t("footer.kdpDesc")}</p>
-          <p>{t("footer.primeVideo")}<br />{t("footer.primeVideoDesc")}</p>
+          <p>
+            {t("footer.music")}
+            <br />
+            {t("footer.musicDesc")}
+          </p>
+          <p>
+            {t("footer.ads")}
+            <br />
+            {t("footer.adsDesc")}
+          </p>
+          <p>
+            {t("footer.business")}
+            <br />
+            {t("footer.businessDesc")}
+          </p>
+          <p>
+            {t("footer.fresh")}
+            <br />
+            {t("footer.freshDesc")}
+          </p>
+          <p>
+            {t("footer.global")}
+            <br />
+            {t("footer.globalDesc")}
+          </p>
+          <p>
+            {t("footer.aws")}
+            <br />
+            {t("footer.awsDesc")}
+          </p>
+          <p>
+            {t("footer.audible")}
+            <br />
+            {t("footer.audibleDesc")}
+          </p>
+          <p>
+            {t("footer.boxOffice")}
+            <br />
+            {t("footer.boxOfficeDesc")}
+          </p>
+          <p>
+            {t("footer.goodreads")}
+            <br />
+            {t("footer.goodreadsDesc")}
+          </p>
+          <p>
+            {t("footer.imdb")}
+            <br />
+            {t("footer.imdbDesc")}
+          </p>
+          <p>
+            {t("footer.kdp")}
+            <br />
+            {t("footer.kdpDesc")}
+          </p>
+          <p>
+            {t("footer.primeVideo")}
+            <br />
+            {t("footer.primeVideoDesc")}
+          </p>
         </div>
       </div>
 
