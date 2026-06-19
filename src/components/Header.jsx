@@ -6,11 +6,16 @@ import { categories, getCategoryLabel } from "../data/products";
 export default function Header({
   cartCount,
   category,
+  deliveryLocation,
   onCategoryChange,
   onLogoClick,
   onOpenCart,
+  onOpenLocation,
+  onOpenOrders,
+  onOpenSignIn,
   onSearchChange,
   searchQuery,
+  user,
 }) {
   const { t, i18n } = useTranslation();
 
@@ -26,11 +31,17 @@ export default function Header({
           <img src={amazonLogo} alt="Amazon logo" className="w-28 object-contain" />
         </button>
 
-        <div className="hidden min-w-36 flex-col cursor-pointer xl:flex">
+        <button
+          type="button"
+          onClick={onOpenLocation}
+          className="hidden min-w-36 flex-col text-left xl:flex"
+        >
           <span className="text-xs text-gray-300">{t("header.deliveringTo")}</span>
-          <span className="text-sm font-bold">{t("header.location")}</span>
+          <span className="text-sm font-bold">
+            {deliveryLocation.city} {deliveryLocation.zipCode}
+          </span>
           <span className="text-xs text-yellow-400">{t("header.updateLocation")}</span>
-        </div>
+        </button>
 
         <form
           className="flex min-w-0 flex-1 items-center"
@@ -74,12 +85,22 @@ export default function Header({
             <option value="es">ES</option>
           </select>
 
-          <button type="button" className="hidden text-left md:block">
-            <p className="text-xs">{t("header.helloSignIn")}</p>
+          <button
+            type="button"
+            onClick={onOpenSignIn}
+            className="hidden text-left md:block"
+          >
+            <p className="text-xs">
+              {user ? t("header.helloUser", { name: user.name }) : t("header.helloSignIn")}
+            </p>
             <p className="font-bold">{t("header.accountLists")}</p>
           </button>
 
-          <button type="button" className="hidden text-left md:block">
+          <button
+            type="button"
+            onClick={onOpenOrders}
+            className="hidden text-left md:block"
+          >
             <p className="text-xs">{t("header.returns")}</p>
             <p className="font-bold">{t("header.orders")}</p>
           </button>

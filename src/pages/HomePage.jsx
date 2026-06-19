@@ -39,6 +39,8 @@ export default function HomePage({
   filteredProducts,
   onAddToCart,
   onCategoryChange,
+  onOpenOrders,
+  onOpenSignIn,
   onViewProduct,
   searchQuery,
 }) {
@@ -133,7 +135,7 @@ export default function HomePage({
         </>
       )}
 
-      <SignInBanner />
+      <SignInBanner onOpenOrders={onOpenOrders} onOpenSignIn={onOpenSignIn} />
       <AmazonMusicSection />
     </main>
   );

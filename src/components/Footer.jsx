@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import amazonLogo from "../assets/amazon-logo.png";
 
-export default function Footer() {
+export default function Footer({ country, onCountryChange }) {
   const { t, i18n } = useTranslation();
 
   const columns = [
@@ -82,7 +82,12 @@ export default function Footer() {
               <option value="en">{t("footer.english")}</option>
               <option value="es">{t("footer.spanish")}</option>
             </select>
-            <select className="rounded border border-gray-500 bg-[#232f3e] px-3 py-1 text-sm text-gray-200">
+            <select
+              value={country}
+              onChange={(event) => onCountryChange(event.target.value)}
+              className="rounded border border-gray-500 bg-[#232f3e] px-3 py-1 text-sm text-gray-200"
+              aria-label={t("footer.country")}
+            >
               <option value="us">{t("footer.unitedStates")}</option>
               <option value="mx">{t("footer.mexico")}</option>
               <option value="ca">{t("footer.canada")}</option>

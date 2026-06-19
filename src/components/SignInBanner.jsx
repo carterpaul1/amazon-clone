@@ -1,7 +1,7 @@
 import { FaBoxOpen, FaRegCreditCard, FaUserShield } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
-export default function SignInBanner() {
+export default function SignInBanner({ onOpenOrders, onOpenSignIn }) {
   const { t } = useTranslation();
 
   return (
@@ -14,6 +14,22 @@ export default function SignInBanner() {
           <p className="mt-2 text-sm text-gray-600">
             {t("accountStrip.copy")}
           </p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <button
+              type="button"
+              onClick={onOpenSignIn}
+              className="rounded-full bg-[#ffd814] px-5 py-2 text-sm font-semibold text-gray-900 hover:bg-[#f7ca00]"
+            >
+              {t("accountStrip.signInButton")}
+            </button>
+            <button
+              type="button"
+              onClick={onOpenOrders}
+              className="rounded-full border border-gray-300 px-5 py-2 text-sm font-semibold text-gray-800 hover:bg-gray-50"
+            >
+              {t("accountStrip.ordersButton")}
+            </button>
+          </div>
         </div>
         <div className="grid gap-3 sm:grid-cols-3">
           {[
