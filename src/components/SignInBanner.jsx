@@ -1,14 +1,45 @@
+import { FaBoxOpen, FaRegCreditCard, FaUserShield } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+
 export default function SignInBanner() {
+  const { t } = useTranslation();
+
   return (
-    <section className="bg-white py-10">
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="text-2xl font-semibold mb-4">Sign in for the best experience</h2>
-        <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-medium py-2 px-6 rounded shadow">
-          Sign in securely
-        </button>
-        <p className="text-sm text-gray-600 mt-4">
-          New to Amazon? <span className="text-blue-500 cursor-pointer hover:underline">Start here</span>
-        </p>
+    <section className="bg-white px-4 py-8">
+      <div className="mx-auto grid max-w-7xl gap-4 border-y border-gray-200 py-6 md:grid-cols-[1fr_2fr] md:items-center">
+        <div>
+          <h2 className="text-2xl font-semibold text-gray-900">
+            {t("accountStrip.title")}
+          </h2>
+          <p className="mt-2 text-sm text-gray-600">
+            {t("accountStrip.copy")}
+          </p>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {[
+            {
+              icon: <FaUserShield className="text-xl text-[#007185]" />,
+              title: t("accountStrip.mockAccountTitle"),
+              copy: t("accountStrip.mockAccountCopy"),
+            },
+            {
+              icon: <FaBoxOpen className="text-xl text-[#007185]" />,
+              title: t("accountStrip.orderFlowTitle"),
+              copy: t("accountStrip.orderFlowCopy"),
+            },
+            {
+              icon: <FaRegCreditCard className="text-xl text-[#007185]" />,
+              title: t("accountStrip.safeCheckoutTitle"),
+              copy: t("accountStrip.safeCheckoutCopy"),
+            },
+          ].map(({ icon, title, copy }) => (
+            <div key={title} className="rounded-sm bg-gray-50 p-4">
+              {icon}
+              <h3 className="mt-3 font-semibold text-gray-900">{title}</h3>
+              <p className="mt-1 text-sm text-gray-600">{copy}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,25 +1,46 @@
+import { FaHeadphones, FaPlay, FaShieldAlt } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+
 export default function AmazonMusicSection() {
+  const { t } = useTranslation();
+
   return (
-    <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-12">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
-        {/* Text Content */}
-        <div className="mb-6 md:mb-0 md:w-1/2">
-          <h2 className="text-3xl font-bold mb-4">🎧 Amazon Music</h2>
-          <p className="text-lg mb-6">
-            Stream millions of songs ad-free. Discover new releases, curated playlists, and exclusive content.
+    <section className="bg-[#111827] px-4 py-10 text-white">
+      <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-wide text-[#ffd814]">
+            {t("musicStrip.eyebrow")}
           </p>
-          <button className="bg-white text-indigo-700 font-semibold px-6 py-2 rounded hover:bg-gray-100 transition">
-            Explore Amazon Music
-          </button>
+          <h2 className="mt-2 text-3xl font-semibold">{t("musicStrip.title")}</h2>
+          <p className="mt-3 max-w-xl text-sm leading-6 text-gray-300">
+            {t("musicStrip.copy")}
+          </p>
         </div>
 
-        {/* Image */}
-        <div className="md:w-1/2 flex justify-center">
-          <img
-            src="https://images-na.ssl-images-amazon.com/images/I/71zY5ZzZzZL._AC_SL1500_.jpg"
-            alt="Amazon Music Promo"
-            className="w-72 h-auto rounded shadow-lg"
-          />
+        <div className="grid gap-3 sm:grid-cols-3">
+          {[
+            {
+              icon: <FaHeadphones className="text-2xl text-[#ffd814]" />,
+              title: t("musicStrip.musicTitle"),
+              copy: t("musicStrip.musicCopy"),
+            },
+            {
+              icon: <FaPlay className="text-2xl text-[#ffd814]" />,
+              title: t("musicStrip.playlistTitle"),
+              copy: t("musicStrip.playlistCopy"),
+            },
+            {
+              icon: <FaShieldAlt className="text-2xl text-[#ffd814]" />,
+              title: t("musicStrip.checkoutTitle"),
+              copy: t("musicStrip.checkoutCopy"),
+            },
+          ].map(({ icon, title, copy }) => (
+            <div key={title} className="rounded-sm border border-white/10 bg-white/5 p-4">
+              {icon}
+              <h3 className="mt-4 font-semibold">{title}</h3>
+              <p className="mt-2 text-sm text-gray-300">{copy}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
