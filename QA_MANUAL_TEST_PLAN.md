@@ -1,9 +1,10 @@
-# Manual QA Plan: Cross-Browser Compatibility + Functional Testing
+﻿# Manual QA Plan: Cross-Browser Compatibility + Functional Testing
 
 ## Scope
-This plan covers manual QA for the Amazon Clone home page, focused on:
+This plan covers manual QA for CommerceHub, an Amazon-inspired ecommerce front-end portfolio project. The goal is to validate that the app works as a polished shopping experience, not just a visual clone, with coverage focused on:
 - Cross-browser compatibility on desktop browsers.
-- Core functional smoke coverage for key UI behaviors.
+- Core functional smoke coverage for browsing, navigation, localization, and shopping UI behavior.
+- Portfolio-critical user flows that demonstrate product discovery, translated interface copy, and cart-ready ecommerce interactions.
 
 ## Test Environment
 - Application URL: `http://127.0.0.1:4173/`
@@ -28,9 +29,9 @@ This plan covers manual QA for the Amazon Clone home page, focused on:
 
 | Browser | Rendering Smoke | Header + Nav Visibility | Language Toggle Behavior | Result |
 |---|---|---|---|---|
-| Chromium | Pass | Pass | Pass | ✅ Compatible |
-| Firefox | Pass | Pass | Pass | ✅ Compatible |
-| WebKit | Pass | Pass | Pass | ✅ Compatible |
+| Chromium | Pass | Pass | Pass | âœ… Compatible |
+| Firefox | Pass | Pass | Pass | âœ… Compatible |
+| WebKit | Pass | Pass | Pass | âœ… Compatible |
 
 ## Notes / Risks
 - Coverage is currently smoke-level and focused on critical first-load/header functionality.
@@ -38,3 +39,5 @@ This plan covers manual QA for the Amazon Clone home page, focused on:
   - Mobile viewport checks (e.g., 390x844 and 768x1024).
   - Carousel interaction checks (next/prev and swipe behavior).
   - Accessibility checks (keyboard tab order, focus states, color contrast, and landmarks).
+
+
